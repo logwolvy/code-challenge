@@ -72,7 +72,7 @@ class CompaniesControllerTest < ApplicationSystemTestCase
     end
 
     # View assertions
-    assert_text "error encountered while saving"
+    assert_text "Email must have a getmainstreet.com domain"
 
     # DB assertions
     assert_not Company.exists?(email: 'new_test_company@invalid.com')
