@@ -58,4 +58,21 @@ class CompaniesControllerTest < ApplicationSystemTestCase
     assert_equal "28173", last_company.zip_code
   end
 
+  test "Destroy" do
+    visit companies_path
+
+    company_to_destroy = Company.find(187955600)
+    count_before_deletion = Company.count
+
+    accept_confirm do
+      find_link('Delete', href: "/companies/#{company_to_destroy.id}").click
+    end
+
+    # View assertions
+    assert_text 'Deleted successfully'
+
+    # DB assertions
+    assert_not Company.exists?(company_to_destroy.id)
+    assert_not_equal count_before_deletion, Company.count
+  end
 end
