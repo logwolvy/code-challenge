@@ -1,5 +1,15 @@
 <div class="py-5">
   <%= form_for @company do |f| %>
+    <% if @company.errors.any? %>
+      <div class="border border-warning p-3">
+        <h4><%= pluralize(@company.errors.count, "error") %> encountered while saving:</h2>
+        <ul>
+          <% @company.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="row my-lg-3">
       <div class="col-lg-3">
@@ -53,7 +63,7 @@
       </div>
       <div class="col-lg offset-lg-1">
         <div class="form-group">
-          <%= f.text_field :email, class: "form-control", placeholder: "hello@company.com"%>
+          <%= f.email_field :email, class: "form-control", placeholder: "hello@company.com"%>
         </div>
       </div>
     </div>
