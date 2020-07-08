@@ -2,6 +2,8 @@
 
 class Company < ApplicationRecord
   EMAIL_DOMAIN_PATTERN = /\b.+@getmainstreet\.com\z/.freeze
+
+  # Associations
   has_rich_text :description
 
   # Validations
