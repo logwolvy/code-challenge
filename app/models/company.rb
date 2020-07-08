@@ -26,6 +26,8 @@ class Company < ApplicationRecord
   end
 
   def populate_city_and_state
+    return unless zip_code_changed?
+
     decoded_zipcode = ZipCodes.identify(zip_code)
     self.city = decoded_zipcode[:city]
     self.state = decoded_zipcode[:state_code]

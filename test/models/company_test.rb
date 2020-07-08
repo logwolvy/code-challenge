@@ -18,6 +18,10 @@ class CompanyTest < ActiveSupport::TestCase
     company = Company.create!(company_attributes(:wolf_painting))
     assert_equal 'Ventura', company.city
     assert_equal 'CA', company.state
+
+    company.update!(zip_code: '37201')
+    assert_equal 'Nashville', company.city
+    assert_equal 'TN', company.state
   end
 
   private
