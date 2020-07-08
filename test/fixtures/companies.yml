@@ -1,13 +1,13 @@
 hometown_painting:
   name: Hometown Painting
   email: "hometown_painting@hometownpainting.com"
-  zip_code: "93003"
+  zip_code: "30301"
   phone: "555-808-8888"
 
 wolf_painting:
   name: "Wolf Painting"
-  email: "wolf_painting@wolfpainting.com"
-  zip_code: "30301"
+  email: "wolf_painting@getmainstreet.com"
+  zip_code: "93003"
   phone: "555-808-8888"
 
 thompson_patining:

@@ -15,4 +15,10 @@ class CompanyTest < ActiveSupport::TestCase
     assert company.invalid?
     assert_equal ['must have a getmainstreet.com domain'], company.errors[:email]
   end
+
+  test 'should populate city, state details from pincode on save or update' do
+    company = Company.create!(companies(:wolf_painting).attributes.except('id'))
+    assert_equal 'Ventura', company.city
+    assert_equal 'CA', company.state
+  end
 end
